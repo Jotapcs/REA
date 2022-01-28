@@ -1,0 +1,72 @@
+<div>
+  <h2>Cadastro de Funcionários</h2>
+  <button class="button" mat-button (click)="novoFuncionario()">Novo Cadastro
+  </button>
+  <mat-table [dataSource]="funcionarios">
+
+  <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+
+</mat-table>
+  <div *ngIf="funcionarioEdicao != undefined" class="editArea">
+    <br>
+      <br>
+      <br>
+      <h3 class="dados">Dados do Funcionário</h3>
+
+      <mat-form-field class="formField">
+          <mat-label>Nome</mat-label>
+          <input matInput [(ngModel)]="funcionarioEdicao.nome">
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>Cpf</mat-label>
+          <input matInput [(ngModel)]="funcionarioEdicao.cpf">
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>Rg</mat-label>
+          <input matInput [(ngModel)]="funcionarioEdicao.rg">
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>telefone</mat-label>
+          <input matInput [(ngModel)]="funcionarioEdicao.telefone">
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>E-mail</mat-label>
+          <input matInput [(ngModel)]="funcionarioEdicao.email">
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>Data de Nascimento</mat-label>
+          <input matInput [(ngModel)]="funcionarioEdicao.dataNascimento"><br>
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>Data do Contrato</mat-label>
+          <input matInput [(ngModel)]="funcionarioEdicao.dataContrato"><br>
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>Cargo</mat-label>
+          <input matInput [(ngModel)]="funcionarioEdicao.funcao"><br>
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+        <mat-label>Número do Contrato</mat-label>
+        <input matInput [(ngModel)]="funcionarioEdicao.numeroContrato"><br>
+      </mat-form-field>
+
+      <button class="cancelar" mat-button (click)="cancelar()">
+         Cancelar
+      </button>
+
+      <button class="salvar" mat-button (click)="salvar()">
+         Salvar
+        <mat-icon>done_outline</mat-icon>
+      </button>
+
+    <br>
+  </div>
+</div>

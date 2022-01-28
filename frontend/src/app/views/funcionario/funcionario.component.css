@@ -1,0 +1,21 @@
+.listar-funcionarios {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.button{
+  background-color: #8A2BE2;
+}
+
+.cancelar{
+  background-color: #8A2BE2;
+  margin: 15px;
+}
+.salvar{
+  background-color: #8A2BE2;
+}
+.dados{
+  padding: 5px;
+  font-size: 18px;
+}
+

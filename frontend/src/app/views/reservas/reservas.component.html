@@ -1,0 +1,174 @@
+<div>
+  <h2>Lista de reservas feitas</h2>
+  <mat-table [dataSource]="reservas">
+
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef>
+          ID
+      </mat-header-cell>
+      <mat-cell *matCellDef="let reservas">
+          {{reservas.id}}
+      </mat-cell>
+    </ng-container>
+
+      <ng-container matColumnDef="nome">
+          <mat-header-cell *matHeaderCellDef>
+              Nome
+          </mat-header-cell>
+          <mat-cell *matCellDef="let reservas">
+              {{reservas.nome}}
+          </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="cpf">
+          <mat-header-cell *matHeaderCellDef>
+            Cpf
+          </mat-header-cell>
+          <mat-cell *matCellDef="let reservas">
+              {{reservas.cpf}}
+          </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="rg">
+          <mat-header-cell *matHeaderCellDef>
+            Rg
+          </mat-header-cell>
+          <mat-cell *matCellDef="let reservas">
+              {{reservas.rg}}
+          </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="telefone">
+          <mat-header-cell *matHeaderCellDef>
+            Telefone
+          </mat-header-cell>
+          <mat-cell *matCellDef="let reservas">
+              {{reservas.telefone}}
+          </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+          <mat-header-cell *matHeaderCellDef>
+            E-mail
+          </mat-header-cell>
+          <mat-cell *matCellDef="let reservas">
+              {{reservas.email}}
+          </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="dataNascimento">
+          <mat-header-cell *matHeaderCellDef>
+            Data de Nascimento
+          </mat-header-cell>
+          <mat-cell *matCellDef="let reservas">
+              {{reservas.dataNascimento}}
+          </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="dataCheckin">
+          <mat-header-cell *matHeaderCellDef>
+            Data do Check-In
+          </mat-header-cell>
+          <mat-cell *matCellDef="let reservas">
+              {{reservas.dataCheckin}}
+          </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="dataCheckout">
+          <mat-header-cell *matHeaderCellDef>
+            Data do Check-Out
+          </mat-header-cell>
+          <mat-cell *matCellDef="let reservas">
+              {{reservas.dataCheckout}}
+          </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="numeroAcompanhantes">
+        <mat-header-cell *matHeaderCellDef>
+          Número de Acompanhantes
+        </mat-header-cell>
+        <mat-cell *matCellDef="let reservas">
+            {{reservas.numeroAcompanhantes}}
+        </mat-cell>
+      </ng-container>
+
+  <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>
+        Atualizar ou Remover a Reserva
+      </mat-header-cell>
+      <mat-cell *matCellDef="let reservas">
+          <button mat-button (click)="selecionarReserva(reservas)">
+              <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-button (click)="excluir(reservas)">
+              <mat-icon>delete</mat-icon>
+          </button>
+      </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: columns"></mat-row>
+</mat-table>
+  <div *ngIf="reservasEdicao != undefined" class="editArea">
+    <br>
+      <br>
+      <br>
+      <h3 class="dados">Atualize a reserva</h3>
+
+      <mat-form-field class="formField">
+          <mat-label>Nome</mat-label>
+          <input matInput [(ngModel)]="reservasEdicao.nome">
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>Cpf</mat-label>
+          <input matInput [(ngModel)]="reservasEdicao.cpf">
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>Rg</mat-label>
+          <input matInput [(ngModel)]="reservasEdicao.rg">
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>telefone</mat-label>
+          <input matInput [(ngModel)]="reservasEdicao.telefone">
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>E-mail</mat-label>
+          <input matInput [(ngModel)]="reservasEdicao.email">
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>Data de Nascimento</mat-label>
+          <input matInput [(ngModel)]="reservasEdicao.dataNascimento"><br>
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>Data do Check-In</mat-label>
+          <input matInput [(ngModel)]="reservasEdicao.dataCheckin"><br>
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>Data do Check-Out</mat-label>
+          <input matInput [(ngModel)]="reservasEdicao.dataCheckout"><br>
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+        <mat-label>Número de Acompanhantes</mat-label>
+        <input matInput [(ngModel)]="reservasEdicao.numeroAcompanhantes"><br>
+      </mat-form-field>
+
+      <button class="cancelar" mat-button (click)="cancelar()">
+        Cancelar
+      </button>
+
+      <button class="salvar" mat-button (click)="salvar()">
+        Salvar
+        <mat-icon>done_outline</mat-icon>
+      </button>
+
+    <br>
+  </div>
+</div>

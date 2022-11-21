@@ -16,18 +16,18 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
-
 import { HttpClientModule} from '@angular/common/http';
-import { FuncionarioComponent } from './views/funcionario/funcionario.component';
-import { ContratadosComponent } from './views/contratados/contratados.component';
+import { NovaReservaComponent } from './views/nova-reserva/novareserva.component';
+import { ReservasComponent } from './views/reservas/reservas.component';
+import { HomeComponent } from './views/home/home.component';
 import { FormsModule } from '@angular/forms';
-
 
 @NgModule({
   declarations: [
     AppComponent,
-    FuncionarioComponent,
-    ContratadosComponent
+    NovaReservaComponent,
+    ReservasComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

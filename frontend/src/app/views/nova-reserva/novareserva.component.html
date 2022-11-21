@@ -1,0 +1,72 @@
+<div>
+  <h2>Faça uma nova Reserva</h2>
+  <button class="button" mat-button (click)="novoFuncionario()">Reservar
+  </button>
+  <mat-table [dataSource]="dadosDaReservas">
+
+  <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+
+</mat-table>
+  <div *ngIf="reservaEdicao != undefined" class="editArea">
+    <br>
+      <br>
+      <br>
+      <h3 class="dados">Dados da Reserva</h3>
+
+      <mat-form-field class="formField">
+          <mat-label>Nome</mat-label>
+          <input matInput [(ngModel)]="reservaEdicao.nome">
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>Cpf</mat-label>
+          <input matInput [(ngModel)]="reservaEdicao.cpf">
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>Rg</mat-label>
+          <input matInput [(ngModel)]="reservaEdicao.rg">
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>telefone</mat-label>
+          <input matInput [(ngModel)]="reservaEdicao.telefone">
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>E-mail</mat-label>
+          <input matInput [(ngModel)]="reservaEdicao.email">
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>Data de Nascimento</mat-label>
+          <input matInput [(ngModel)]="reservaEdicao.dataNascimento"><br>
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>Data do CheckIn</mat-label>
+          <input matInput [(ngModel)]="reservaEdicao.dataCheckin"><br>
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+          <mat-label>Data do Check-Out</mat-label>
+          <input matInput [(ngModel)]="reservaEdicao.dataCheckout"><br>
+      </mat-form-field>
+
+      <mat-form-field class="formField">
+        <mat-label>Número de Acompanhantes</mat-label>
+        <input matInput [(ngModel)]="reservaEdicao.numeroAcompanhantes"><br>
+      </mat-form-field>
+
+      <button class="cancelar" mat-button (click)="cancelar()">
+         Cancelar
+      </button>
+
+      <button class="salvar" mat-button (click)="salvar()">
+         Efetuar a Reserva
+        <mat-icon>done_outline</mat-icon>
+      </button>
+
+    <br>
+  </div>
+</div>

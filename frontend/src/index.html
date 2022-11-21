@@ -13,4 +13,28 @@
 <body class="mat-typography">
   <app-root></app-root>
 </body>
+<section class="newsletter">
+  <h3> Newsletter </h3>
+  <p> Receba notícias sobre o Hotel VillaTur por e-mail</p>
+  <form>
+    <input type="text" placeholder="Seu nome">
+    <input type="email" placeholder="Seu e-mail">
+    <button> Cadastrar </button>
+</section>
+<footer class="rodape">
+  <p> ©2021 Hotel VillaTur - Todos os direitos reservados </p>
+</footer>
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "9c9cea7d-4393-42ea-a55d-87bcbda2f7bf", // The ID of this integration.
+    region: "us-south", // The region your integration is hosted in.
+    serviceInstanceID: "f3c3a26a-63d4-4c7f-b000-1be5c609b33b", // The ID of your service instance.
+    onLoad: function(instance) { instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
 </html>

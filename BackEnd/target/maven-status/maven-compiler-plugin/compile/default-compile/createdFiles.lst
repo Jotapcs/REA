@@ -1,0 +1,7 @@
+br\senac\BackEnd\MyResource.class
+br\senac\BackEnd\filters\RESTCorsDemoResponseFilter.class
+br\senac\BackEnd\Reserva\DadosDaReservaJDBC.class
+br\senac\BackEnd\filters\RESTCorsDemoRequestFilter.class
+br\senac\BackEnd\Reserva\DadosDaReservaService.class
+br\senac\BackEnd\DataBase.class
+br\senac\BackEnd\Reserva\DadosDaReserva.class
